@@ -1,11 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Client } from './client';
+import { Client, MOCK_CLIENTS } from './client';
 import { AngularFire, FirebaseObjectObservable, FirebaseListObservable } from 'angularfire2';
-
-const initClientData = [
-  {name: 'abc'},
-  {name: 'efg'}
-];
 
 @Injectable()
 export class ClientService {
@@ -32,6 +27,6 @@ export class ClientService {
   }
 
   populateClients() {
-    initClientData.forEach(this.addClient);
+    MOCK_CLIENTS.forEach(this.addClient);
   }
 }
