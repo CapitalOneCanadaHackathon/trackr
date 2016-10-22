@@ -4,9 +4,11 @@ import { FormsModule }    from '@angular/forms';
 import { RouterModule }   from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login.component';
-import { SearchComponent } from './search.component';
+import { LoginComponent } from './login/login.component';
+import { SearchComponent } from './search/search.component';
+import { ProfileComponent } from './profile/profile.component';
 import { ClientListComponent } from './client/client-list.component';
+import { ClientDetailsComponent } from './client-details/client-details.component';
 import { TherapistListComponent } from './therapist/therapist-list.component';
 
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
@@ -40,6 +42,8 @@ const myFirebaseAuthConfig = {
     AppComponent,
     LoginComponent,
     SearchComponent,
+    ProfileComponent,
+    ClientDetailsComponent,
     ClientListComponent,
     TherapistListComponent
   ],
