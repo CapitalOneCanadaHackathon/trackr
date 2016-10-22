@@ -8,7 +8,7 @@ import { LoginComponent } from './login.component';
 import { SearchComponent } from './search.component';
 import { ClientListComponent } from './client/client-list.component';
 
-import { AngularFireModule } from 'angularfire2';
+import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 
 export const firebaseConfig = {
     apiKey: "AIzaSyB1YoqFwLH8yHfbrBvDPp6EIS9G9IYJVJs",
@@ -17,6 +17,11 @@ export const firebaseConfig = {
     storageBucket: "trackr-23a42.appspot.com",
     messagingSenderId: "767208206365"
   };
+
+const myFirebaseAuthConfig = {
+  provider: AuthProviders.Google,
+  method: AuthMethods.Redirect
+}
 
 @NgModule({
   imports: [
@@ -27,7 +32,7 @@ export const firebaseConfig = {
       { path: 'search', component: SearchComponent },
       { path: 'clients', component: ClientListComponent }
     ]),
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig, myFirebaseAuthConfig)
   ],
   declarations: [
     AppComponent,

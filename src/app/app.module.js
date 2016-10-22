@@ -24,6 +24,10 @@ exports.firebaseConfig = {
     storageBucket: "trackr-23a42.appspot.com",
     messagingSenderId: "767208206365"
 };
+var myFirebaseAuthConfig = {
+    provider: angularfire2_1.AuthProviders.Google,
+    method: angularfire2_1.AuthMethods.Redirect
+};
 var AppModule = (function () {
     function AppModule() {
     }
@@ -39,7 +43,7 @@ AppModule = __decorate([
                 { path: 'search', component: search_component_1.SearchComponent },
                 { path: 'clients', component: client_list_component_1.ClientListComponent }
             ]),
-            angularfire2_1.AngularFireModule.initializeApp(exports.firebaseConfig)
+            angularfire2_1.AngularFireModule.initializeApp(exports.firebaseConfig, myFirebaseAuthConfig)
         ],
         declarations: [
             app_component_1.AppComponent,
