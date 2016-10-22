@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { SearchComponent } from './search/search.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ClientListComponent } from './client/client-list.component';
+import { ClientDetailsComponent } from './client-details/client-details.component';
 
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 
@@ -40,7 +41,8 @@ const myFirebaseAuthConfig = {
     LoginComponent,
     SearchComponent,
     ProfileComponent,
-    ClientListComponent
+    ClientListComponent,
+    ClientDetailsComponent
   ],
   bootstrap: [ AppComponent ]
 })

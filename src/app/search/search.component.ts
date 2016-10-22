@@ -1,10 +1,10 @@
 import { Component, Input } from '@angular/core';
-import { ProfileComponent } from '../profile/profile.component';
+import { ClientListComponent } from '../client/client-list.component';
 
 @Component({
     selector: 'search',
     templateUrl: './search.component.html',
-    entryComponents: [ProfileComponent]
+    entryComponents: [ClientListComponent]
 })
 export class SearchComponent{
 
