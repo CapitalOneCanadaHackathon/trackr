@@ -6,10 +6,10 @@ import { ClientService } from '../client/client.service';
 
 @Component({
     selector: 'client-details',
-    template: `
-        <p> Client Details </p>
-        <p>{{client | async | json }}</p>
-    `
+    templateUrl: './client-details.component.html',
+      styleUrls: [
+      './client-details.component.css'
+    ]
 })
 export class ClientDetailsComponent {
     client: FirebaseObjectObservable<any>;

@@ -5,3 +5,14 @@ main {
   margin-top: 50px;
   display: block;
 }
+
+.centered {
+    top: 50%;
+    transform: translateY(60%);
+}
+
+.sign-in {
+    margin-top: 43px;
+    font-size: 26px;
+    width: 300px;
+}

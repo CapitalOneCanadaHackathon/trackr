@@ -1,13 +1,16 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
-            <h1>Search Component</h1>
-            <input type="text" name="Search patient name" placeholder="Search patient name" value="">
+            <div class="col-md-12">
+                <div class="search-box"> 
+                    <input value="Search" type="text" class="form-control" />
+                    <i class="glyphicon glyphicon-search"></i>
+                </div>
+            </div>
         </div>
-    </div>
     <div class="row">
-        <div class="col-md-12">
             <client-list></client-list>
+        <div class="col-md-12">
+            <button type="button" class="btn btn-success"><span class="gglyphicon glyphicon-plus" aria-hidden="true"></span> New Client</button>
         </div>
     </div>
 </div>
