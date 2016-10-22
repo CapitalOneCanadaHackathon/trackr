@@ -6,6 +6,7 @@ import { RouterModule }   from '@angular/router';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login.component';
 import { SearchComponent } from './search.component';
+import { ProfileComponent } from './profile.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { SearchComponent } from './search.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    SearchComponent
+    SearchComponent,
+    ProfileComponent
   ],
   bootstrap: [ AppComponent ]
 })
