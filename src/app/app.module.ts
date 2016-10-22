@@ -9,6 +9,7 @@ import { SearchComponent } from './search/search.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ClientListComponent } from './client/client-list.component';
 import { ClientDetailsComponent } from './client-details/client-details.component';
+import { TherapistListComponent } from './therapist/therapist-list.component';
 
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 
@@ -32,7 +33,8 @@ const myFirebaseAuthConfig = {
     RouterModule.forRoot([
       { path: '', component: LoginComponent },
       { path: 'search', component: SearchComponent },
-      { path: 'clients', component: ClientListComponent }
+      { path: 'clients', component: ClientListComponent },
+      { path: 'therapists', component: TherapistListComponent }
     ]),
     AngularFireModule.initializeApp(firebaseConfig, myFirebaseAuthConfig)
   ],
@@ -41,8 +43,9 @@ const myFirebaseAuthConfig = {
     LoginComponent,
     SearchComponent,
     ProfileComponent,
+    ClientDetailsComponent,
     ClientListComponent,
-    ClientDetailsComponent
+    TherapistListComponent
   ],
   bootstrap: [ AppComponent ]
 })
