@@ -1,0 +1,16 @@
+<main>
+  <div class="container">
+    <div class="col-md-12">
+        <img src="../../public/images/bbyoshorz.gif" alt="Logo" class="img_responsive">
+
+        <div *ngIf='!(af.auth | async)'>
+          <h1>Please log in</h1>
+          <button class="btn btn-lg btn-primary btn-block" (click)='login()'>Sign in</button>
+        </div>
+        <div *ngIf='(af.auth | async)'>
+          <h1>You're logged in</h1>
+          <button class="btn btn-lg btn-primary btn-block" (click)='logout()'>Log Out</button>
+        </div>
+    </div>
+  </div>
+</main>
