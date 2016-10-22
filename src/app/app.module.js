@@ -16,6 +16,7 @@ var app_component_1 = require("./app.component");
 var login_component_1 = require("./login.component");
 var search_component_1 = require("./search.component");
 var client_list_component_1 = require("./client/client-list.component");
+var therapist_list_component_1 = require("./therapist/therapist-list.component");
 var angularfire2_1 = require("angularfire2");
 exports.firebaseConfig = {
     apiKey: "AIzaSyB1YoqFwLH8yHfbrBvDPp6EIS9G9IYJVJs",
@@ -41,7 +42,8 @@ AppModule = __decorate([
             router_1.RouterModule.forRoot([
                 { path: '', component: login_component_1.LoginComponent },
                 { path: 'search', component: search_component_1.SearchComponent },
-                { path: 'clients', component: client_list_component_1.ClientListComponent }
+                { path: 'clients', component: client_list_component_1.ClientListComponent },
+                { path: 'therapists', component: therapist_list_component_1.TherapistListComponent }
             ]),
             angularfire2_1.AngularFireModule.initializeApp(exports.firebaseConfig, myFirebaseAuthConfig)
         ],
@@ -49,7 +51,8 @@ AppModule = __decorate([
             app_component_1.AppComponent,
             login_component_1.LoginComponent,
             search_component_1.SearchComponent,
-            client_list_component_1.ClientListComponent
+            client_list_component_1.ClientListComponent,
+            therapist_list_component_1.TherapistListComponent
         ],
         bootstrap: [app_component_1.AppComponent]
     }),

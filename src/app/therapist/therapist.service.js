@@ -9,33 +9,37 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var client_1 = require("./client");
 var angularfire2_1 = require("angularfire2");
-var ClientService = (function () {
-    function ClientService(af) {
+var MOCK_THERAPISTS = [
+    { name: 'Therapist 1' },
+    { name: 'Therapist 2' },
+    { name: 'Therapist 3' }
+];
+var TherapistService = (function () {
+    function TherapistService(af) {
         this.af = af;
-        this.clients = af.database.list('/clients');
+        this.therapists = af.database.list('/therapists');
     }
-    ClientService.prototype.getClients = function () {
-        return this.clients;
+    TherapistService.prototype.getTherapists = function () {
+        return this.therapists;
     };
-    ClientService.prototype.addClient = function (client) {
-        this.clients.push(client);
+    TherapistService.prototype.addTherapist = function (therapist) {
+        this.therapists.push(therapist);
     };
-    ClientService.prototype.updateClient = function (id, client) {
-        this.clients.update(id, client);
+    TherapistService.prototype.updateTherapist = function (id, therapist) {
+        this.therapists.update(id, therapist);
     };
-    ClientService.prototype.removeClient = function (id) {
-        this.clients.remove(id);
+    TherapistService.prototype.removeTherapist = function (id) {
+        this.therapists.remove(id);
     };
-    ClientService.prototype.populateClients = function () {
-        client_1.MOCK_CLIENTS.forEach(this.addClient);
+    TherapistService.prototype.populateTherapists = function () {
+        MOCK_THERAPISTS.forEach(this.addTherapist);
     };
-    return ClientService;
+    return TherapistService;
 }());
-ClientService = __decorate([
+TherapistService = __decorate([
     core_1.Injectable(),
     __metadata("design:paramtypes", [angularfire2_1.AngularFire])
-], ClientService);
-exports.ClientService = ClientService;
-//# sourceMappingURL=client.service.js.map
+], TherapistService);
+exports.TherapistService = TherapistService;
+//# sourceMappingURL=therapist.service.js.map
