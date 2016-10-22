@@ -34,7 +34,8 @@ const myFirebaseAuthConfig = {
       { path: '', component: LoginComponent },
       { path: 'search', component: SearchComponent },
       { path: 'clients', component: ClientListComponent },
-      { path: 'therapists', component: TherapistListComponent }
+      { path: 'therapists', component: TherapistListComponent },
+      { path: 'client/:key', component: ClientDetailsComponent}
     ]),
     AngularFireModule.initializeApp(firebaseConfig, myFirebaseAuthConfig)
   ],
