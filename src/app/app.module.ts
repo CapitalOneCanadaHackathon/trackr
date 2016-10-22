@@ -6,6 +6,7 @@ import { RouterModule }   from '@angular/router';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login.component';
 import { SearchComponent } from './search.component';
+import { ClientListComponent } from './client/client-list.component';
 
 import { AngularFireModule } from 'angularfire2';
 
@@ -23,14 +24,16 @@ export const firebaseConfig = {
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: LoginComponent },
-      { path: 'search', component: SearchComponent }
+      { path: 'search', component: SearchComponent },
+      { path: 'clients', component: ClientListComponent }
     ]),
     AngularFireModule.initializeApp(firebaseConfig)
   ],
   declarations: [
     AppComponent,
     LoginComponent,
-    SearchComponent
+    SearchComponent,
+    ClientListComponent
   ],
   bootstrap: [ AppComponent ]
 })

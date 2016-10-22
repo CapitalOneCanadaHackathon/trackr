@@ -10,12 +10,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var angularfire2_1 = require("angularfire2");
+var initClientData = [
+    { name: 'abc' },
+    { name: 'efg' }
+];
 var ClientService = (function () {
     function ClientService(af) {
         this.af = af;
+        this.clients = af.database.list('/clients');
     }
-    ClientService.prototype.getClient = function () {
-        return this.af.database.object('/newClient');
+    ClientService.prototype.getClients = function () {
+        return this.clients;
+    };
+    ClientService.prototype.addClient = function (client) {
+        this.clients.push(client);
+    };
+    ClientService.prototype.updateClient = function (id, client) {
+        this.clients.update(id, client);
+    };
+    ClientService.prototype.removeClient = function (id) {
+        this.clients.remove(id);
+    };
+    ClientService.prototype.populateClients = function () {
+        initClientData.forEach(this.addClient);
     };
     return ClientService;
 }());

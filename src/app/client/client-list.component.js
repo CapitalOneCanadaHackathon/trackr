@@ -9,20 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-require("../../public/css/styles.css");
-var client_service_1 = require("./client/client.service");
-var AppComponent = (function () {
-    function AppComponent() {
+var client_service_1 = require("./client.service");
+var ClientListComponent = (function () {
+    function ClientListComponent(clientService) {
+        this.clientService = clientService;
+        this.clients = clientService.getClients();
     }
-    return AppComponent;
+    return ClientListComponent;
 }());
-AppComponent = __decorate([
+ClientListComponent = __decorate([
     core_1.Component({
-        selector: 'my-app',
-        template: "\n    <h1 class=\"title\">Trackr</h1>\n    <nav>\n      <a routerLink=\"/\" routerLinkActive=\"active\">Login</a>\n      <a routerLink=\"/search\" routerLinkActive=\"active\">Search</a>\n    </nav>\n    <router-outlet></router-outlet>\n  ",
+        selector: 'client-list',
+        template: "\n    <h1>Client list</h1>\n    <ol>\n      <li *ngFor='let client of clients | async'>\n        <h2>{{client.name}}</h2>\n      </li>\n    </ol>\n  ",
         providers: [client_service_1.ClientService]
     }),
-    __metadata("design:paramtypes", [])
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+    __metadata("design:paramtypes", [client_service_1.ClientService])
+], ClientListComponent);
+exports.ClientListComponent = ClientListComponent;
+//# sourceMappingURL=client-list.component.js.map

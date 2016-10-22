@@ -15,6 +15,7 @@ var router_1 = require("@angular/router");
 var app_component_1 = require("./app.component");
 var login_component_1 = require("./login.component");
 var search_component_1 = require("./search.component");
+var client_list_component_1 = require("./client/client-list.component");
 var angularfire2_1 = require("angularfire2");
 exports.firebaseConfig = {
     apiKey: "AIzaSyB1YoqFwLH8yHfbrBvDPp6EIS9G9IYJVJs",
@@ -35,14 +36,16 @@ AppModule = __decorate([
             forms_1.FormsModule,
             router_1.RouterModule.forRoot([
                 { path: '', component: login_component_1.LoginComponent },
-                { path: 'search', component: search_component_1.SearchComponent }
+                { path: 'search', component: search_component_1.SearchComponent },
+                { path: 'clients', component: client_list_component_1.ClientListComponent }
             ]),
             angularfire2_1.AngularFireModule.initializeApp(exports.firebaseConfig)
         ],
         declarations: [
             app_component_1.AppComponent,
             login_component_1.LoginComponent,
-            search_component_1.SearchComponent
+            search_component_1.SearchComponent,
+            client_list_component_1.ClientListComponent
         ],
         bootstrap: [app_component_1.AppComponent]
     }),
