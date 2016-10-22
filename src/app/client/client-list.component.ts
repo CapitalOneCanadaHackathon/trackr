@@ -12,13 +12,13 @@ import { FirebaseListObservable } from 'angularfire2';
         <h2 (click)="selectedClient(client)">{{client.name}}</h2>
       </li>
     </ol>
-    <client-details></client-details>
   `,
   providers: [ClientService],
   entryComponents: [ClientDetailsComponent]
 })
 export class ClientListComponent {
   clients: FirebaseListObservable<any>;
+
   constructor(private clientService: ClientService) {
     this.clients = clientService.getClients();
   }
