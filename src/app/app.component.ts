@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import '../../public/css/styles.css';
 import { ClientService } from './client/client.service';
+import { TherapistService } from './therapist/therapist.service';
 
 @Component({
   selector: 'my-app',
@@ -12,7 +13,10 @@ import { ClientService } from './client/client.service';
     </nav>
     <router-outlet></router-outlet>
   `,
-  providers: [ClientService]
+  providers: [
+    ClientService,
+    TherapistService
+  ]
 })
 export class AppComponent {
 }

@@ -9,24 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-require("../../public/css/styles.css");
-var client_service_1 = require("./client/client.service");
-var therapist_service_1 = require("./therapist/therapist.service");
-var AppComponent = (function () {
-    function AppComponent() {
+var therapist_service_1 = require("./therapist.service");
+var TherapistListComponent = (function () {
+    function TherapistListComponent(therapistService) {
+        this.therapistService = therapistService;
+        this.therapists = therapistService.getTherapists();
     }
-    return AppComponent;
+    return TherapistListComponent;
 }());
-AppComponent = __decorate([
+TherapistListComponent = __decorate([
     core_1.Component({
-        selector: 'my-app',
-        template: "\n    <h1 class=\"title\">Trackr</h1>\n    <nav>\n      <a routerLink=\"/\" routerLinkActive=\"active\">Login</a>\n      <a routerLink=\"/search\" routerLinkActive=\"active\">Search</a>\n    </nav>\n    <router-outlet></router-outlet>\n  ",
-        providers: [
-            client_service_1.ClientService,
-            therapist_service_1.TherapistService
-        ]
+        selector: 'therapist-list',
+        template: "\n    <h1>Therapist list</h1>\n    <ol>\n      <li *ngFor='let therapist of therapists | async'>\n        <h2>{{therapist.name}}</h2>\n      </li>\n    </ol>\n  ",
+        providers: [therapist_service_1.TherapistService]
     }),
-    __metadata("design:paramtypes", [])
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+    __metadata("design:paramtypes", [therapist_service_1.TherapistService])
+], TherapistListComponent);
+exports.TherapistListComponent = TherapistListComponent;
+//# sourceMappingURL=therapist-list.component.js.map
