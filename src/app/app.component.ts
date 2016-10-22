@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import '../../public/css/styles.css';
+import { ClientService } from './client/client.service';
 
 @Component({
   selector: 'my-app',
@@ -10,6 +11,8 @@ import '../../public/css/styles.css';
       <a routerLink="/search" routerLinkActive="active">Search</a>
     </nav>
     <router-outlet></router-outlet>
-  `
+  `,
+  providers: [ClientService]
 })
-export class AppComponent { }
+export class AppComponent {
+}
