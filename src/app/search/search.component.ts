@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ProfileComponent } from './profile.component';
+import { ProfileComponent } from '../profile/profile.component';
 
 @Component({
     selector: 'search',
