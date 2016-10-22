@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>
+                {{ (client | async)?.name }} Profile
+            </h1>
+            <hr />
+        </div>
+        <div class="col-md-6">
+            <p><strong>Name:</strong> {{ (client | async)?.name }} </p>
+            <p><strong>Date of Birth:</strong> {{ (client | async)?.dob }} </p>
+            <p><strong>Address:</strong> {{ (client | async)?.address }} </p>
+            <p><strong>Gender:</strong> {{ (client | async)?.gender }} </p>
+            <p><strong>Phone:</strong> {{ (client | async)?.phone }} </p>
+        </div>
+        <div class="col-md-6">
+            <p><strong>Ethnicity:</strong> {{ (client | async)?.ethnicity }} </p>
+            <p><strong>Sexual Orientations:</strong> {{ (client | async)?.sexualOrientation }} </p>
+            <p><strong>Emergency Contact:</strong> {{ (client | async)?.emergencyContact }} </p>
+            <p><strong>Medical Conditions:</strong> {{ (client | async)?.medicalConditions }} </p>
+            <p><strong>Number of Sessions:</strong> {{ (client | async)?.sessions }} </p>
+        </div>
+        <div class="col-md-12">
+            <strong>Notes</strong>
+            <p>
+                {{ (client | async)?.note }}
+            </p>
+        </div>
+        <div class="col-md-12">
+            <button type="button" class="btn btn-success"><span class="gglyphicon glyphicon-plus" aria-hidden="true"></span> New Session</button>
+        </div>
+    </div>
+</div>
+
+

@@ -10,6 +10,10 @@ export class ClientService {
     this.clients = af.database.list('/clients');
   }
 
+  getClient(key: string): FirebaseObjectObservable<any> {
+      return this.af.database.object('/clients/' + key);
+  }
+
   getClients(): FirebaseListObservable<any> {
     return this.clients;
   }
